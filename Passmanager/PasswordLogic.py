@@ -56,8 +56,3 @@ def password_decision_engine():
     else:
       #ToDo add extra situaions
       break
-
-
-      
-print('Hello welcome to the password manager application!\n')
-password_decision_engine()
