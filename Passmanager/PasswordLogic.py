@@ -2,12 +2,19 @@ import PasswordGenerator
 
 # write site, password, and username
 def write_password(site, username, password):
+  site = str(site)
+  username = str(username)
+  password = str(password)
+
   with open('PasswordList.txt', 'a') as f:
     f.write(f'{site}|{username}|{password}\n')
 
 
 # read password and username based on site
 def read_password(check_site):
+
+  check_site = str(check_site)
+
   with open('PasswordList.txt', 'r') as f:
 
     # ToDo This will only get the last version of the site password as the only return is the last instance of this loop
@@ -15,10 +22,11 @@ def read_password(check_site):
       if check_site in x:
         x = x.strip()
         site, username, password = x.split('|')
+        login_info = {"site": site, "username": username, "password": password}
+        return login_info
+      else:
+        pass
   
-  login_info = f'\nSite: {site}\nUsername: {username}\nPassowrd: {password}\n'
-
-  return login_info
 
 # Ask caller what they want to do for adding passwords
 def get_login_info():

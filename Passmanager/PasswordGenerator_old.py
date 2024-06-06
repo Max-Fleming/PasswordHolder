@@ -16,9 +16,9 @@ def generate_password():
 
   # ToDo create a while loop and try statement to make sure only numbers are input
 
-  nr_letters = 8
-  nr_numbers = 2
-  nr_symbols = 2
+  nr_letters = int(input('\nHow many letters would you like in your password: '))
+  nr_numbers = int(input('\nHow many numbers do you want in your password: '))
+  nr_symbols = int(input('\nHow many symbols do you want in your password: '))
 
   # The list that will be randomized and made into a password
   password_list = []
